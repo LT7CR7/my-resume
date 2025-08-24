@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لطف اله تاجیک - خلاقیت بی‌پایان</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ========== BASE STYLES ========== */
+        * {
+            font-family: 'Vazirmatn', 'Tahoma', sans-serif;
+        }
+        
+        .serif-font {
+            font-family: 'Amiri', serif;
+        }
+        
+        body {
+            opacity: 0;
+            animation: fadeInBody 1s ease-in-out forwards;
+        }
+        
+        /* ========== KEYFRAME ANIMATIONS ========== */
+        @keyframes fadeInBody {
+            to { 
+                opacity: 1; 
+            }
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { 
+                background-position: 0% 50%; 
+            }
+            50% { 
+                background-position: 100% 50%; 
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(100vh) rotate(0deg); 
+                opacity: 0; 
+            }
+            10%, 90% { 
+                opacity: 1; 
+            }
+            50% { 
+                transform: translateY(-10vh) rotate(180deg); 
+            }
+        }
+        
+        @keyframes textGlow {
+            from { 
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3); 
+            }
+            to { 
+                text-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 255, 255, 0.5); 
+            }
+        }
+        
+        @keyframes typing {
+            from { 
+                width: 0; 
+            }
+            to { 
+                width: 100%; 
+            }
+        }
+        
+        @keyframes blink-caret {
+            from, to { 
+                border-color: transparent; 
+            }
+            50% { 
+                border-color: rgba(255, 255, 255, 0.8); 
+            }
+        }
+        
+        @keyframes pulseGlow {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
+                transform: scale(1.02);
+            }
+        }
+        
+        @keyframes spin {
+            0% { 
+                transform: rotate(0deg); 
+            }
+            100% { 
+                transform: rotate(360deg); 
+            }
+        }
+        
+        @keyframes telegramPulse {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(0, 136, 204, 0.4);
+            }
+            50% { 
+                transform: scale(1.05);
+                box-shadow: 0 0 0 15px rgba(0, 136, 204, 0);
+            }
+        }
+        
+        /* ========== HERO SECTION STYLES ========== */
+        .hero-bg {
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #1e3a8a 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3);
+            animation: textGlow 3s ease-in-out infinite alternate;
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-left: 3px solid rgba(255, 255, 255, 0.8);
+            white-space: nowrap;
+            animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        /* ========== FLOATING PARTICLES ========== */
+        .floating-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: rgba(59, 130, 246, 0.6);
+            border-radius: 50%;
+            animation: float 6s infinite ease-in-out;
+        }
+        
+        /* ========== BUTTONS ========== */
+        .cta-button {
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            border: none;
+            border-radius: 50px;
+            padding: 1rem 2.5rem;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.4);
+        }
+        
+        .cta-button:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+        
+        .pulse-attention {
+            animation: pulseGlow 2s infinite;
+        }
+        
+        /* ========== PARALLAX EFFECTS ========== */
+        .parallax-section {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .parallax-bg {
+            position: absolute;
+            top: -20%;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            background-size: cover;
+            background-position: center;
+            will-change: transform;
+        }
+        
+        /* ========== SCROLL ANIMATIONS ========== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* ========== INTERACTIVE CARDS ========== */
+        .interactive-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .interactive-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .interactive-card:hover::before {
+            opacity: 1;
+        }
+        
+        .interactive-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* ========== ANIMATED ICONS ========== */
+        .animated-icon {
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .animated-icon:hover {
+            transform: scale(1.2) rotate(10deg);
+            color: #3b82f6;
+        }
+        
+        /* ========== LOADING SPINNER ========== */
+        .loading-spinner {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loading-spinner.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(59, 130, 246, 0.3);
+            border-top: 4px solid #3b82f6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        /* ========== TELEGRAM POPUP ========== */
+        .telegram-popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .telegram-popup-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .telegram-popup {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            max-width: 450px;
+            width: 90%;
+            margin: 1rem;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+            transform: scale(0.8) translateY(30px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            text-align: center;
+        }
+        
+        .telegram-popup-overlay.active .telegram-popup {
+            transform: scale(1) translateY(0);
+        }
+        
+        .telegram-popup-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(0, 0, 0, 0.1);
+            border: none;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #666;
+            font-size: 1.2rem;
+        }
+        
+        .telegram-popup-close:hover {
+            background: rgba(0, 0, 0, 0.2);
+            color: #333;
+            transform: scale(1.1);
+        }
+        
+        .telegram-icon {
+            width: 60px;
+            height: 60px;
+            background: #0088cc;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 1.8rem;
+            animation: telegramPulse 2s infinite;
+        }
+        
+        .telegram-button {
+            background: #0088cc;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        
+        .telegram-button:hover {
+            background: #0077b3;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 136, 204, 0.3);
+        }
+        
+        .telegram-button:active {
+            transform: translateY(0);
+        }
+        
+        /* ========== SCROLLBAR STYLING ========== */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            border-radius: 4px;
+        }
+        
+        /* ========== MOBILE RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .typewriter {
+                font-size: 1.5rem;
+                animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+            }
+            
+            .cta-button {
+                padding: 0.875rem 2rem;
+                font-size: 1rem;
+            }
+            
+            .interactive-card:hover {
+                transform: translateY(-5px);
+            }
+            
+            .telegram-popup {
+                padding: 2rem;
+                margin: 0.5rem;
+                border-radius: 15px;
+            }
+            
+            .telegram-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            .telegram-button {
+                padding: 0.875rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" id="loadingSpinner">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Telegram Popup -->
+    <div class="telegram-popup-overlay" id="telegramPopup">
+        <div class="telegram-popup">
+            <button class="telegram-popup-close" onclick="closeTelegramPopup()">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="telegram-icon">
+                <i class="fab fa-telegram-plane"></i>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-gray-800 mb-3">به کانال تلگرام ما بپیوندید</h3>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+                جدیدترین خبرها و اطلاع‌رسانی‌ها را دریافت کنید
+            </p>
+            
+            <a href="https://t.me/The_MAN_LT7" target="_blank" class="telegram-button">
+                <i class="fab fa-telegram-plane"></i>
+                ورود به کانال تلگرام
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center relative">
+        <!-- Floating Particles -->
+        <div class="floating-particles" id="particles"></div>
+        
+        <!-- Hero Content -->
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <div class="reveal">
+                <h1 class="serif-font text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 glow-text">
+                    لطف اله تاجیک
+                </h1>
+            </div>
+            
+            <div class="reveal" style="animation-delay: 0.3s;">
+                <p class="typewriter text-xl md:text-2xl text-white mb-8 inline-block">
+                    خلاقیت، نوآوری و هنر در یک مجموعه
+                </p>
+            </div>
+            
+            <div class="reveal" style="animation-delay: 0.6s;">
+                <p class="text-lg md:text-xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed">
+                    دانشجوی مهندسی شیمی، طراح لباس، نویسنده و خالق تجربه‌های بصری منحصربه‌فرد
+                </p>
+            </div>
+            
+            <div class="reveal" style="animation-delay: 0.9s;">
+                <button class="cta-button pulse-attention" onclick="scrollToSection('about')">
+                    <i class="fas fa-rocket ml-2"></i>
+                    کشف کنید
+                </button>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <i class="fas fa-chevron-down text-2xl animated-icon"></i>
+        </div>
+    </section>
+
+    <!-- About Section with Parallax -->
+    <section id="about" class="parallax-section py-20 bg-gradient-to-br from-gray-900 to-gray-800 relative">
+        <div class="parallax-bg" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));"></div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="serif-font text-4xl md:text-5xl font-bold text-white mb-6 reveal">
+                    داستان من
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto reveal"></div>
+            </div>
+            
+            <!-- Profile Photo Section -->
+            <div class="text-center mb-16 reveal">
+                <div class="relative inline-block">
+                    <div class="w-48 h-48 md:w-64 md:h-64 mx-auto mb-6 relative">
+                        <!-- Animated border rings -->
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 animate-spin" style="animation-duration: 8s;"></div>
+                        <div class="absolute inset-1 rounded-full bg-gradient-to-r from-indigo-400 via-blue-400 to-purple-400 animate-spin" style="animation-duration: 6s; animation-direction: reverse;"></div>
+                        
+                        <!-- Profile photo container -->
+                        <div class="absolute inset-3 rounded-full overflow-hidden bg-gray-800 border-4 border-gray-700">
+                            <!-- Your profile photo -->
+                            <img id="profileImage" 
+                                 src="" 
+                                 alt="لطف اله تاجیک" 
+                                 class="w-full h-full object-cover"
+                                 style="display: none;">
+                            <!-- Default placeholder -->
+                            <div id="profilePlaceholder" class="w-full h-full bg-gradient-to-br from-blue-900 to-purple-900 flex items-center justify-center">
+                                <div class="text-center">
+                                    <i class="fas fa-camera text-4xl md:text-6xl text-white/50 mb-3"></i>
+                                    <p class="text-white/70 text-sm font-medium mb-2">آپلود عکس پروفایل</p>
+                                    <button onclick="document.getElementById('photoUpload').click()" 
+                                            class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-xs transition-all duration-300 hover:scale-105">
+                                        <i class="fas fa-upload mr-1"></i>
+                                        انتخاب عکس
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Hidden file input -->
+                            <input type="file" 
+                                   id="photoUpload" 
+                                   accept="image/*" 
+                                   style="display: none;" 
+                                   onchange="handlePhotoUpload(event)">
+                        </div>
+                        
+                        <!-- Floating elements around photo -->
+                        <div class="absolute -top-2 -right-2 w-8 h-8 bg-blue-500 rounded-full animate-bounce" style="animation-delay: 0s;"></div>
+                        <div class="absolute -bottom-2 -left-2 w-6 h-6 bg-purple-500 rounded-full animate-bounce" style="animation-delay: 1s;"></div>
+                        <div class="absolute top-1/2 -left-4 w-4 h-4 bg-indigo-500 rounded-full animate-bounce" style="animation-delay: 2s;"></div>
+                        <div class="absolute top-1/4 -right-4 w-5 h-5 bg-pink-500 rounded-full animate-bounce" style="animation-delay: 1.5s;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="reveal-left">
+                    <div class="interactive-card">
+                        <div class="text-blue-400 text-4xl mb-4">
+                            <i class="fas fa-lightbulb animated-icon"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">خلاقیت بی‌پایان</h3>
+                        <p class="text-gray-300 leading-relaxed mb-6">
+                            من لطف اله تاجیک هستم، فردی که در تلاقی علم و هنر زندگی می‌کنم. 
+                            از مهندسی شیمی تا طراحی لباس، از نویسندگی تا طراحی وب، 
+                            هر روز در حال کشف راه‌های جدید برای بیان خلاقیت هستم.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">مهندسی شیمی</span>
+                            <span class="px-3 py-1 bg-purple-900 text-purple-300 rounded-full text-sm">طراحی لباس</span>
+                            <span class="px-3 py-1 bg-indigo-900 text-indigo-300 rounded-full text-sm">نویسندگی</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reveal-right">
+                    <div class="interactive-card">
+                        <div class="text-purple-400 text-4xl mb-4">
+                            <i class="fas fa-heart animated-icon"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">شور و اشتیاق</h3>
+                        <p class="text-gray-300 leading-relaxed mb-6">
+                            هر پروژه برای من فرصتی است تا احساسات و ایده‌هایم را به زندگی تبدیل کنم. 
+                            از تحلیل فرآیندهای شیمیایی تا خلق داستان‌های عاشقانه، 
+                            همه کارهایم با عشق و دقت انجام می‌شود.
+                        </p>
+                        <button class="bg-gradient-to-r from-blue-400 to-purple-400 text-white px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105">
+                            <i class="fas fa-arrow-left ml-2"></i>
+                            بیشتر بدانید
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-20 bg-gray-900 relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="serif-font text-4xl md:text-5xl font-bold text-white mb-6 reveal">
+                    مهارت‌های من
+                </h2>
+                <p class="text-xl text-gray-300 reveal">ترکیبی منحصربه‌فرد از علم، هنر و تکنولوژی</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="interactive-card reveal" style="animation-delay: 0.1s;">
+                    <div class="text-blue-400 text-3xl mb-4">
+                        <i class="fas fa-flask animated-icon"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">مهندسی شیمی</h3>
+                    <p class="text-gray-300">تحلیل فرآیندها، بهینه‌سازی و حل مسائل پیچیده صنعتی</p>
+                </div>
+                
+                <div class="interactive-card reveal" style="animation-delay: 0.2s;">
+                    <div class="text-purple-400 text-3xl mb-4">
+                        <i class="fas fa-tshirt animated-icon"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">طراحی لباس</h3>
+                    <p class="text-gray-300">خلاقیت در مد، طراحی منحصربه‌فرد و پیروی از ترندهای روز</p>
+                </div>
+                
+                <div class="interactive-card reveal" style="animation-delay: 0.3s;">
+                    <div class="text-green-400 text-3xl mb-4">
+                        <i class="fas fa-code animated-icon"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">طراحی وب</h3>
+                    <p class="text-gray-300">ایجاد تجربه‌های کاربری جذاب و واکنش‌گرا</p>
+                </div>
+                
+                <div class="interactive-card reveal" style="animation-delay: 0.4s;">
+                    <div class="text-orange-400 text-3xl mb-4">
+                        <i class="fas fa-pen-fancy animated-icon"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">نویسندگی</h3>
+                    <p class="text-gray-300">خلق متن‌های عاشقانه، داستان‌سرایی و ادبیات</p>
+                </div>
+                
+                <div class="interactive-card reveal" style="animation-delay: 0.5s;">
+                    <div class="text-red-400 text-3xl mb-4">
+                        <i class="fas fa-chalkboard-teacher animated-icon"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">تدریس</h3>
+                    <p class="text-gray-300">انتقال دانش و الهام بخشی به نسل جوان</p>
+                </div>
+                
+                <div class="interactive-card reveal" style="animation-delay: 0.6s;">
+                    <div class="text-indigo-400 text-3xl mb-4">
+                        <i class="fas fa-chart-bar animated-icon"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">آفیس</h3>
+                    <p class="text-gray-300">تسلط کامل بر نرم‌افزارهای Microsoft Office</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 relative overflow-hidden">
+        <div class="floating-particles" id="ctaParticles"></div>
+        
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <div class="reveal">
+                <h2 class="serif-font text-4xl md:text-5xl font-bold text-white mb-6 glow-text">
+                    آماده همکاری هستید؟
+                </h2>
+                <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                    بیایید با هم پروژه‌ای خلق کنیم که دنیا را تغییر دهد
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="cta-button bg-white text-blue-600 hover:bg-gray-100">
+                        <i class="fas fa-envelope ml-2"></i>
+                        تماس با من
+                    </button>
+                    <button class="cta-button bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600">
+                        <i class="fas fa-download ml-2"></i>
+                        دانلود رزومه
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Footer Section -->
+    <footer class="py-16 bg-gray-900 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="serif-font text-3xl md:text-4xl font-bold text-white mb-4">
+                    راه‌های ارتباط با من
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                <!-- Phone -->
+                <div class="text-center group">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-green-400 to-green-500 rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-phone text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">شماره تماس</h3>
+                    <a href="tel:09935655106" class="text-gray-300 hover:text-green-400 transition-colors duration-300 text-lg font-medium">
+                        09935655106
+                    </a>
+                </div>
+                
+                <!-- WhatsApp -->
+                <div class="text-center group">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fab fa-whatsapp text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">واتساپ</h3>
+                    <div class="space-y-1">
+                        <p class="text-gray-300 text-sm">09199764157</p>
+                        <a href="https://wa.me/989199764157" target="_blank" class="inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full text-sm transition-all duration-300 hover:scale-105">
+                            <i class="fab fa-whatsapp mr-1"></i>
+                            پیام در واتساپ
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Telegram -->
+                <div class="text-center group">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fab fa-telegram-plane text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">تلگرام</h3>
+                    <a href="https://t.me/Spaincar7" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm transition-all duration-300 hover:scale-105">
+                        <i class="fab fa-telegram-plane mr-1"></i>
+                        @Spaincar7
+                    </a>
+                </div>
+                
+                <!-- Eitaro -->
+                <div class="text-center group">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-user-circle text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">ایتارو</h3>
+                    <a href="itaro://user/Spaincar7" class="inline-block bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-full text-sm transition-all duration-300 hover:scale-105">
+                        <i class="fas fa-external-link-alt mr-1"></i>
+                        Spaincar7
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="text-center mt-12 pt-8 border-t border-gray-800">
+                <p class="text-gray-400 text-sm">
+                    © 2024 لطف اله تاجیک - تمامی حقوق محفوظ است
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Loading animation
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('loadingSpinner').classList.add('hidden');
+            }, 1000);
+            
+            // Show Telegram popup after 0.5 seconds
+            setTimeout(() => {
+                showTelegramPopup();
+            }, 500);
+        });
+
+        // Telegram popup functions
+        function showTelegramPopup() {
+            const popup = document.getElementById('telegramPopup');
+            popup.classList.add('active');
+        }
+
+        function closeTelegramPopup() {
+            const popup = document.getElementById('telegramPopup');
+            popup.classList.remove('active');
+        }
+
+        // Close popup when clicking on overlay
+        document.addEventListener('DOMContentLoaded', function() {
+            const overlay = document.getElementById('telegramPopup');
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    closeTelegramPopup();
+                }
+            });
+            
+            // Close popup with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeTelegramPopup();
+                }
+            });
+        });
+
+        // Create floating particles
+        function createParticles(containerId, count = 30) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            
+            for (let i = 0; i < count; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        // Parallax effect
+        function handleParallax() {
+            const parallaxElements = document.querySelectorAll('.parallax-bg');
+            const scrolled = window.pageYOffset;
+            
+            parallaxElements.forEach(element => {
+                const rate = scrolled * -0.5;
+                element.style.transform = `translateY(${rate}px)`;
+            });
+        }
+
+        // Scroll reveal animation
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+            
+            reveals.forEach(reveal => {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveal.getBoundingClientRect().top;
+                const elementVisible = 100;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add('active');
+                }
+            });
+        }
+
+        // Smooth scroll to section
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Mouse movement parallax for cards
+        function handleMouseParallax(e) {
+            const cards = document.querySelectorAll('.interactive-card');
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+            
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const cardX = rect.left + rect.width / 2;
+                const cardY = rect.top + rect.height / 2;
+                
+                const deltaX = (mouseX - cardX) * 0.01;
+                const deltaY = (mouseY - cardY) * 0.01;
+                
+                card.style.transform = `translateX(${deltaX}px) translateY(${deltaY}px)`;
+            });
+        }
+
+        // Photo upload functionality
+        function handlePhotoUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                // Check if file is an image
+                if (!file.type.startsWith('image/')) {
+                    alert('لطفاً فقط فایل تصویری انتخاب کنید');
+                    return;
+                }
+                
+                // Check file size (max 5MB)
+                if (file.size > 5 * 1024 * 1024) {
+                    alert('حجم فایل نباید بیشتر از ۵ مگابایت باشد');
+                    return;
+                }
+                
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const imageData = e.target.result;
+                    
+                    // Save to localStorage for persistence
+                    localStorage.setItem('profilePhoto', imageData);
+                    
+                    // Display the image
+                    displayProfilePhoto(imageData);
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+        
+        function displayProfilePhoto(imageData) {
+            const profileImage = document.getElementById('profileImage');
+            const placeholder = document.getElementById('profilePlaceholder');
+            
+            profileImage.src = imageData;
+            profileImage.style.display = 'block';
+            placeholder.style.display = 'none';
+        }
+        
+        function loadSavedPhoto() {
+            const savedPhoto = localStorage.getItem('profilePhoto');
+            if (savedPhoto) {
+                displayProfilePhoto(savedPhoto);
+            }
+        }
+
+        // Initialize animations and effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load saved photo on page load
+            loadSavedPhoto();
+            
+            createParticles('particles', 40);
+            createParticles('ctaParticles', 25);
+            revealOnScroll();
+            
+            // Add mouse parallax effect
+            document.addEventListener('mousemove', handleMouseParallax);
+            
+            // Add click effects to interactive elements
+            document.querySelectorAll('.interactive-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+        });
+
+        // Event listeners
+        window.addEventListener('scroll', function() {
+            handleParallax();
+            revealOnScroll();
+        });
+
+        // Optimize animations for mobile
+        if (window.innerWidth <= 768) {
+            document.addEventListener('touchstart', function() {
+                document.body.classList.add('touch-device');
+            });
+        }
+
+        // Add intersection observer for better performance
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+                observer.observe(el);
+            });
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9741b257a55b3801',t:'MTc1NjAyNjQxOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
